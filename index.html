@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <main class="quiz">
+ 
+    <header class="quiz-head">
+      <h1 class="quiz-title">Petit Quiz JavaScript</h1>
+      <p class="quiz-subtitle">Cinq questions pour tester tes bases connaissance</p>
+    </header>
+ 
+    <section id="quiz-zone" class="card">
+ 
+      <div class="progress">
+        <span id="progress-text" class="progress__text">Question 1 / 5</span>
+        <div class="progress__track">
+          <div id="progress-bar" class="progress__bar"></div>
+        </div>
+      </div>
+ 
+      <h2 id="question" class="question"></h2>
+ 
+      <!-- Conteneur vide : les boutons sont crees en JS dans une boucle -->
+      <div id="options" class="options"></div>
+ 
+      <p id="feedback" class="feedback" role="status"></p>
+ 
+      <div class="actions">
+        <button id="next-btn" class="btn btn--primary" disabled>Suivant</button>
+      </div>
+ 
+    </section>
+ 
+    <!-- Ecran final : cache au depart -->
+    <section id="result-zone" class="card card--result is-hidden">
+      <p class="result__label">Quiz termine</p>
+      <p id="result-score" class="result__score"></p>
+      <p id="result-message" class="result__message"></p>
+      <button id="restart-btn" class="btn btn--primary">Recommencer</button>
+    </section>
+ 
+  </main>
+ 
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,240 @@
+:root {
+  --bg: #eceff5;
+  --card: #ffffff;
+  --ink: #14213d;
+  --ink-soft: #5a6484;
+  --line: #dde2ec;
+  --accent: #3a56d4;
+  --accent-soft: #e7ebfd;
+  --success: #1f7a52;
+  --success-soft: #e3f4ec;
+  --danger: #b03030;
+  --danger-soft: #fceaea;
+  --radius: 14px;
+}
+ 
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+  min-height: 100vh;
+}
+ 
+.quiz {
+  width: 100%;
+  max-width: 620px;
+}
+ 
+.quiz-head {
+  margin-bottom:1.5rem;
+}
+ 
+.quiz-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.4rem);
+  font-weight: 700;
+  /* letter-spacing: -0.02em; */
+}
+ 
+.quiz-subtitle {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+ 
+
+.card {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+ 
+.is-hidden {
+  display: none;
+}
+ 
+
+.progress {
+  margin-bottom: 1.5rem;
+}
+ 
+.progress__text {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+ 
+.progress__track {
+  height: 5px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+}
+ 
+.progress__bar {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+ 
+/* ---------- Question ---------- */
+.question {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+}
+ 
+/* ---------- Options ---------- */
+.options {
+  display: grid;
+  gap: 0.6rem;
+}
+ 
+.option {
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+ 
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+ 
+.option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+ 
+.option:disabled {
+  cursor: default;
+}
+ 
+.option.is-correct {
+  background: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
+  font-weight: 500;
+}
+ 
+.option.is-wrong {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+  color: var(--danger);
+  font-weight: 500;
+}
+ 
+/* ---------- Feedback ---------- */
+.feedback {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+ 
+.feedback.is-correct { color: var(--success); }
+.feedback.is-wrong   { color: var(--danger); }
+ 
+/* ---------- Boutons ---------- */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+ 
+.btn {
+  font: inherit;
+  font-weight: 500;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+ 
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+ 
+.btn--primary:hover:not(:disabled) {
+  opacity: 0.88;
+}
+ 
+.btn:disabled {
+  background: var(--line);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+ 
+.btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+ 
+/* ---------- Ecran final ---------- */
+.card--result {
+  text-align: center;
+}
+ 
+.result__label {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+ 
+.result__score {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.5rem, 12vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0.25rem 0;
+}
+ 
+.result__message {
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+ 
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.75rem 3rem;
+  }
+ 
+  .actions {
+    justify-content: stretch;
+  }
+ 
+  .btn {
+    width: 100%;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+ 
