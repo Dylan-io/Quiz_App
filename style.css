@@ -69,21 +69,21 @@ body {
   margin-bottom: 1.5rem;
 }
  
-.progress__text {
+.progress-text {
   font-size: 0.85rem;
   color: var(--ink-soft);
   display: block;
   margin-bottom: 0.5rem;
 }
  
-.progress__track {
-  height: 5px;
+.progress-track {
+  height: 7px;
   background: var(--line);
   border-radius: 99px;
   overflow: hidden;
 }
  
-.progress__bar {
+.progress-bar {
   height: 100%;
   width: 0;
   background: var(--accent);
@@ -91,7 +91,7 @@ body {
   transition: width 0.3s ease;
 }
  
-/* ---------- Question ---------- */
+
 .question {
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.1rem, 3.5vw, 1.35rem);
@@ -100,7 +100,7 @@ body {
   margin-bottom: 1.25rem;
 }
  
-/* ---------- Options ---------- */
+
 .options {
   display: grid;
   gap: 0.6rem;

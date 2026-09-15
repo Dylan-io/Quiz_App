@@ -2,7 +2,7 @@ const questions = [
   {
     question: "Quelle methode ajoute un element a la fin d'un tableau ?",
     options: ["push()", "pop()", "shift()", "slice()"],
-    answer: "push()"
+    answer:  "push()"
   },
   {
     question: "Quel mot-cle declare une variable qu'on ne peut pas reassigner ?",
