@@ -31,9 +31,7 @@ const questions = [
   }
 ];
  
-/* ============================================
-   2. Les elements du DOM
-   ============================================ */
+// 2. Les elements du DOM
 const quizZone = document.getElementById("quiz-zone");
 const resultZone = document.getElementById("result-zone");
 const questionEl = document.getElementById("question");
@@ -46,15 +44,11 @@ const restartBtn = document.getElementById("restart-btn");
 const resultScore = document.getElementById("result-score");
 const resultMessage = document.getElementById("result-message");
  
-/* ============================================
-   3. L'etat du quiz
-   ============================================ */
+// 3. L'etat du quiz
 let currentIndex = 0;
 let score = 0;
  
-/* ============================================
-   4. Afficher une question
-   ============================================ */
+// 4. Afficher une question
 function showQuestion() {
   const current = questions[currentIndex];
  
@@ -83,9 +77,7 @@ function showQuestion() {
   });
 }
  
-/* ============================================
-   5. Verifier la reponse
-   ============================================ */
+// 5. Verifier la reponse
 function checkAnswer(clickedBtn, selected, correct) {
   const allButtons = optionsEl.querySelectorAll(".option");
  
@@ -110,9 +102,7 @@ function checkAnswer(clickedBtn, selected, correct) {
   nextBtn.disabled = false;
 }
  
-/* ============================================
-   6. Question suivante
-   ============================================ */
+// 6. Question suivante
 nextBtn.addEventListener("click", function () {
   currentIndex++;
  
@@ -123,9 +113,7 @@ nextBtn.addEventListener("click", function () {
   }
 });
  
-/* ============================================
-   7. Ecran final
-   ============================================ */
+// 7. Ecran final
 function showResult() {
   quizZone.classList.add("is-hidden");
   resultZone.classList.remove("is-hidden");
@@ -142,9 +130,7 @@ function showResult() {
   }
 }
  
-/* ============================================
-   8. Recommencer
-   ============================================ */
+// 8. Recommencer
 restartBtn.addEventListener("click", function () {
   currentIndex = 0;
   score = 0;
@@ -153,8 +139,6 @@ restartBtn.addEventListener("click", function () {
   showQuestion();
 });
  
-/* ============================================
-   9. Demarrage
-   ============================================ */
+// 9. Demarrage
 showQuestion();
  
